@@ -1,0 +1,448 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard | BusFlow{% endblock %}
+
+{% block content %}
+<div class="min-h-screen p-6 md:p-12">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-12">
+        <div>
+            <h1 class="text-3xl font-light text-slate-800">Admin Control</h1>
+            <p class="text-sm text-slate-500">Manage your fleet and drivers</p>
+        </div>
+        <a href="{{ url_for('auth.logout') }}" class="p-3 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-4 mb-8">
+        <button onclick="showTab('buses')" id="tab-buses"
+                class="tab-btn flex items-center gap-2 px-6 py-3 rounded-xl font-medium bg-slate-900 text-white shadow-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8m-8 4h8m-4 4v3m-4-3h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2h2v3l4-3z"></path>
+            </svg>
+            Fleet
+        </button>
+        <button onclick="showTab('drivers')" id="tab-drivers"
+                class="tab-btn flex items-center gap-2 px-6 py-3 rounded-xl font-medium bg-white hover:bg-slate-50 text-slate-500 border border-transparent hover:border-slate-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            Drivers
+        </button>
+        <button onclick="showTab('assignments')" id="tab-assignments"
+                class="tab-btn flex items-center gap-2 px-6 py-3 rounded-xl font-medium bg-white hover:bg-slate-50 text-slate-500 border border-transparent hover:border-slate-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Assignments
+        </button>
+    </div>
+
+    <!-- Buses Tab -->
+    <div id="content-buses" class="tab-content animate-slide-up">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-light text-slate-800">Fleet Management</h2>
+            <button onclick="openBusForm()" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition-all flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+                Add Bus
+            </button>
+        </div>
+
+        <div id="buses-list" class="space-y-4">
+            {% for item in buses %}
+            <div class="glass-panel rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h3 class="text-lg font-medium text-slate-800">{{ item.bus.name }}</h3>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold
+                            {% if item.bus.status == 'ACTIVE' %}bg-emerald-50 text-emerald-600 border border-emerald-200
+                            {% elif item.bus.status == 'MAINTENANCE' %}bg-amber-50 text-amber-600 border border-amber-200
+                            {% else %}bg-red-50 text-red-600 border border-red-200{% endif %}">
+                            {{ item.bus.status }}
+                        </span>
+                    </div>
+                    <p class="text-sm text-slate-500 truncate max-w-md">{{ item.bus.route_display }}</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="text-right hidden md:block">
+                        <div class="text-xs text-slate-400 uppercase">Driver</div>
+                        <div class="text-sm font-medium text-slate-700">{{ item.driver.name if item.driver else 'Unassigned' }}</div>
+                    </div>
+                    <button onclick="openBusForm('{{ item.bus.id }}', '{{ item.bus.name }}', {{ item.bus.route|tojson }}, {{ item.bus.price }}, '{{ item.bus.driver_id or '' }}', '{{ item.bus.status }}')"
+                            class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+            {% if not buses %}
+            <div class="glass-panel rounded-2xl text-center py-12 text-slate-500">
+                No buses in the fleet. Add your first bus above.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Drivers Tab -->
+    <div id="content-drivers" class="tab-content hidden animate-slide-up">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-light text-slate-800">Driver Management</h2>
+            <button onclick="openDriverForm()" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition-all flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                </svg>
+                New Driver
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {% for driver in drivers %}
+            <div class="glass-panel rounded-2xl p-6 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-lg font-bold">
+                    {{ driver.name[0] }}
+                </div>
+                <div>
+                    <h4 class="font-medium text-slate-800">{{ driver.name }}</h4>
+                    <p class="text-sm text-slate-500">{{ driver.email }}</p>
+                    <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-50 text-amber-600 border border-amber-200 mt-1 inline-block">
+                        DRIVER
+                    </span>
+                </div>
+            </div>
+            {% endfor %}
+            {% if not drivers %}
+            <div class="col-span-2 text-center py-12 text-slate-400">No drivers found. Create a driver account above.</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Assignments Tab -->
+    <div id="content-assignments" class="tab-content hidden animate-slide-up">
+        <h2 class="text-xl font-light text-slate-800 mb-6">Assign Drivers to Buses</h2>
+        
+        <div class="space-y-6">
+            {% if unassigned_buses %}
+                {% for bus in unassigned_buses %}
+                <div class="glass-panel rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div>
+                        <h3 class="text-lg font-medium text-slate-800">{{ bus.name }}</h3>
+                        <p class="text-sm text-slate-500 mt-1">{{ bus.start_stop }} → {{ bus.end_stop }}</p>
+                    </div>
+                    <div class="flex items-center gap-2 w-full md:w-auto">
+                        <select id="assign-{{ bus.id }}" class="glass-input rounded-xl py-2 px-4 text-sm w-full md:w-64">
+                            <option value="">Select Driver...</option>
+                            {% for driver in drivers %}
+                            <option value="{{ driver.id }}">{{ driver.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <button onclick="assignDriver('{{ bus.id }}')"
+                                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-medium transition-all">
+                            Assign
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="glass-panel rounded-2xl text-center py-12 text-slate-500">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <p>All buses have drivers assigned!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bus Form Modal -->
+    <div id="bus-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeBusForm()"></div>
+        <div class="absolute inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-2xl">
+            <div class="glass-panel rounded-2xl p-6 max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-medium text-slate-800" id="bus-form-title">Add New Bus</h2>
+                    <button onclick="closeBusForm()" class="text-slate-400 hover:text-slate-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <form id="bus-form" class="space-y-6">
+                    <input type="hidden" id="bus-id">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Bus Name</label>
+                            <input type="text" id="bus-name" required class="w-full glass-input rounded-xl py-3 px-4 text-sm" placeholder="e.g. Red Express 10">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Ticket Price (BDT)</label>
+                            <input type="number" id="bus-price" required class="w-full glass-input rounded-xl py-3 px-4 text-sm" value="50">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Assign Driver</label>
+                            <select id="bus-driver" class="w-full glass-input rounded-xl py-3 px-4 text-sm">
+                                <option value="">No Driver Assigned</option>
+                                {% for driver in drivers %}
+                                <option value="{{ driver.id }}">{{ driver.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Bus Status</label>
+                            <select id="bus-status" class="w-full glass-input rounded-xl py-3 px-4 text-sm">
+                                <option value="ACTIVE">🟢 Active</option>
+                                <option value="MAINTENANCE">🟡 Maintenance</option>
+                                <option value="DECOMMISSIONED">🔴 Decommissioned</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Route Stops (Select in order)</label>
+                        <div id="route-stops" class="flex flex-wrap gap-2">
+                            {% for stop in bus_stops %}
+                            <button type="button" onclick="toggleStop('{{ stop }}')" 
+                                    class="route-stop px-3 py-1 rounded-full text-xs border border-slate-200 text-slate-500 hover:border-slate-400 bg-white transition-all"
+                                    data-stop="{{ stop }}">
+                                {{ stop }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">Selected: <span id="selected-stops">None</span></p>
+                    </div>
+                    
+                    <button type="submit" class="w-full px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition-all">
+                        Save Bus
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Driver Form Modal -->
+    <div id="driver-modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeDriverForm()"></div>
+        <div class="absolute inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-md">
+            <div class="glass-panel rounded-2xl p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-medium text-slate-800">Create New Driver</h2>
+                    <button onclick="closeDriverForm()" class="text-slate-400 hover:text-slate-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <form id="driver-form" class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Full Name</label>
+                        <input type="text" id="driver-name" required class="w-full glass-input rounded-xl py-3 px-4 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Email</label>
+                        <input type="email" id="driver-email" required class="w-full glass-input rounded-xl py-3 px-4 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-500 mb-2 font-medium">Password</label>
+                        <input type="password" id="driver-password" required minlength="6" class="w-full glass-input rounded-xl py-3 px-4 text-sm">
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-medium transition-all">
+                        Create Driver Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    let selectedRoute = [];
+    let editingBusId = null;
+
+    function showTab(tab) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('bg-slate-900', 'text-white', 'shadow-lg');
+            el.classList.add('bg-white', 'text-slate-500');
+        });
+        
+        document.getElementById('content-' + tab).classList.remove('hidden');
+        const tabBtn = document.getElementById('tab-' + tab);
+        tabBtn.classList.add('bg-slate-900', 'text-white', 'shadow-lg');
+        tabBtn.classList.remove('bg-white', 'text-slate-500');
+    }
+
+    function openBusForm(id = null, name = '', route = [], price = 50, driverId = '', status = 'ACTIVE') {
+        editingBusId = id;
+        selectedRoute = route || [];
+        
+        document.getElementById('bus-form-title').textContent = id ? 'Edit Bus' : 'Add New Bus';
+        document.getElementById('bus-id').value = id || '';
+        document.getElementById('bus-name').value = name;
+        document.getElementById('bus-price').value = price;
+        document.getElementById('bus-driver').value = driverId;
+        document.getElementById('bus-status').value = status;
+        
+        updateRouteDisplay();
+        document.getElementById('bus-modal').classList.remove('hidden');
+    }
+
+    function closeBusForm() {
+        document.getElementById('bus-modal').classList.add('hidden');
+        editingBusId = null;
+        selectedRoute = [];
+    }
+
+    function toggleStop(stop) {
+        const index = selectedRoute.indexOf(stop);
+        if (index > -1) {
+            selectedRoute.splice(index, 1);
+        } else {
+            selectedRoute.push(stop);
+        }
+        updateRouteDisplay();
+    }
+
+    function updateRouteDisplay() {
+        document.querySelectorAll('.route-stop').forEach(btn => {
+            const stop = btn.dataset.stop;
+            const index = selectedRoute.indexOf(stop);
+            if (index > -1) {
+                btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.remove('bg-white', 'text-slate-500', 'border-slate-200');
+                btn.innerHTML = `${stop} <span class="ml-1 opacity-60">(${index + 1})</span>`;
+            } else {
+                btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.add('bg-white', 'text-slate-500', 'border-slate-200');
+                btn.textContent = stop;
+            }
+        });
+        
+        document.getElementById('selected-stops').textContent = selectedRoute.length > 0 
+            ? selectedRoute.join(' → ') 
+            : 'None';
+    }
+
+    document.getElementById('bus-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (selectedRoute.length < 2) {
+            alert('Route must have at least 2 stops.');
+            return;
+        }
+        
+        const data = {
+            name: document.getElementById('bus-name').value,
+            route: selectedRoute,
+            price: parseInt(document.getElementById('bus-price').value),
+            driver_id: document.getElementById('bus-driver').value || null,
+            status: document.getElementById('bus-status').value
+        };
+        
+        const url = editingBusId 
+            ? `/admin/bus/${editingBusId}/update`
+            : '/admin/bus/create';
+        
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                alert(result.error);
+                return;
+            }
+            
+            alert(result.message);
+            location.reload();
+        } catch (error) {
+            alert('Failed to save bus.');
+        }
+    });
+
+    function openDriverForm() {
+        document.getElementById('driver-modal').classList.remove('hidden');
+    }
+
+    function closeDriverForm() {
+        document.getElementById('driver-modal').classList.add('hidden');
+    }
+
+    document.getElementById('driver-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const data = {
+            name: document.getElementById('driver-name').value,
+            email: document.getElementById('driver-email').value,
+            password: document.getElementById('driver-password').value
+        };
+        
+        try {
+            const response = await fetch('/admin/driver/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                alert(result.error);
+                return;
+            }
+            
+            alert(result.message);
+            location.reload();
+        } catch (error) {
+            alert('Failed to create driver.');
+        }
+    });
+
+    async function assignDriver(busId) {
+        const driverId = document.getElementById('assign-' + busId).value;
+        
+        if (!driverId) {
+            alert('Please select a driver.');
+            return;
+        }
+        
+        try {
+            const response = await fetch(`/admin/bus/${busId}/assign`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ driver_id: driverId })
+            });
+            
+            const result = await response.json();
+            
+            if (result.error) {
+                alert(result.error);
+                return;
+            }
+            
+            alert(result.message);
+            location.reload();
+        } catch (error) {
+            alert('Failed to assign driver.');
+        }
+    }
+</script>
+{% endblock %}
+

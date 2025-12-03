@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Driver Dashboard | BusFlow{% endblock %}
+
+{% block content %}
+<div class="min-h-screen p-6 md:p-12">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-12">
+        <div>
+            <p class="text-sm text-teal-600 font-medium uppercase tracking-wider mb-1">Driver Dashboard</p>
+            <h1 class="text-3xl font-light text-slate-800">Welcome, {{ user.first_name }}</h1>
+            <p class="text-slate-500 text-sm mt-1">View your assigned buses</p>
+        </div>
+        <a href="{{ url_for('auth.logout') }}" class="p-3 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- Stats Card -->
+    <div class="glass-panel rounded-2xl p-8 text-center mb-8 max-w-md mx-auto">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-teal-50 flex items-center justify-center">
+            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8m-8 4h8m-4 4v3m-4-3h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2h2v3l4-3z"></path>
+            </svg>
+        </div>
+        <div class="text-5xl font-light text-slate-800 mb-2">{{ bus_count }}</div>
+        <div class="text-sm text-slate-500">Assigned Buses</div>
+    </div>
+
+    <!-- Assigned Buses -->
+    <h3 class="text-lg font-medium text-slate-800 mb-4">Your Vehicles</h3>
+    
+    {% if assigned_buses %}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {% for bus in assigned_buses %}
+            <div class="glass-panel rounded-2xl p-6 relative overflow-hidden hover:shadow-lg transition-all">
+                <div class="absolute top-0 left-0 w-1 h-full 
+                    {% if bus.status == 'ACTIVE' %}bg-emerald-500
+                    {% elif bus.status == 'MAINTENANCE' %}bg-amber-500
+                    {% else %}bg-red-500{% endif %}"></div>
+                
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2 bg-slate-100 rounded-xl">
+                                <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8m-8 4h8m-4 4v3m-4-3h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2h2v3l4-3z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-slate-800">{{ bus.name }}</h4>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-semibold
+                                    {% if bus.status == 'ACTIVE' %}bg-emerald-50 text-emerald-600 border border-emerald-200
+                                    {% elif bus.status == 'MAINTENANCE' %}bg-amber-50 text-amber-600 border border-amber-200
+                                    {% else %}bg-red-50 text-red-600 border border-red-200{% endif %}">
+                                    {{ bus.status }}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 mt-4">
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                </svg>
+                                <span class="font-medium text-slate-700">{{ bus.start_stop }}</span>
+                                <span>→</span>
+                                <span class="font-medium text-slate-700">{{ bus.end_stop }}</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span>{{ bus.total_seats }} seats capacity</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-500">
+                                <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{{ bus.route|length }} stops on route</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-slate-100">
+                    <p class="text-xs text-slate-400 truncate">
+                        Route: {{ bus.route_display }}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="glass-panel rounded-2xl text-center py-16">
+            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-slate-100 flex items-center justify-center">
+                <svg class="w-10 h-10 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8m-8 4h8m-4 4v3m-4-3h8a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7a2 2 0 002 2h2v3l4-3z"></path>
+                </svg>
+            </div>
+            <h3 class="text-xl font-medium text-slate-600 mb-2">No Buses Assigned</h3>
+            <p class="text-slate-400">Contact your administrator to get assigned to a bus.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
