@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app.controllers.bus_controller &mdash; BusFlow Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            BusFlow
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Modules Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules.html#module-app">Application Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../modules.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules.html#module-app.config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.user">User Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.__init__"><code class="docutils literal notranslate"><span class="pre">User.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.get_id"><code class="docutils literal notranslate"><span class="pre">User.get_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isAdmin"><code class="docutils literal notranslate"><span class="pre">User.isAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isDriver"><code class="docutils literal notranslate"><span class="pre">User.isDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isUser"><code class="docutils literal notranslate"><span class="pre">User.isUser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.from_dict"><code class="docutils literal notranslate"><span class="pre">User.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.__repr__"><code class="docutils literal notranslate"><span class="pre">User.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.bus">Bus Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.isActive"><code class="docutils literal notranslate"><span class="pre">Bus.isActive</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.start_stop"><code class="docutils literal notranslate"><span class="pre">Bus.start_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.end_stop"><code class="docutils literal notranslate"><span class="pre">Bus.end_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.route_display"><code class="docutils literal notranslate"><span class="pre">Bus.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.hasDriver"><code class="docutils literal notranslate"><span class="pre">Bus.hasDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.get_stop_count"><code class="docutils literal notranslate"><span class="pre">Bus.get_stop_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.is_valid_trip"><code class="docutils literal notranslate"><span class="pre">Bus.is_valid_trip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.from_dict"><code class="docutils literal notranslate"><span class="pre">Bus.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.to_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.booking">Booking Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.booking.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.__init__"><code class="docutils literal notranslate"><span class="pre">Booking.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.isConfirmed"><code class="docutils literal notranslate"><span class="pre">Booking.isConfirmed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.isCancelled"><code class="docutils literal notranslate"><span class="pre">Booking.isCancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.route_display"><code class="docutils literal notranslate"><span class="pre">Booking.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.formatted_date"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.formatted_time"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.from_dict"><code class="docutils literal notranslate"><span class="pre">Booking.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.to_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.__repr__"><code class="docutils literal notranslate"><span class="pre">Booking.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.auth_controller">Authentication Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController"><code class="docutils literal notranslate"><span class="pre">AuthController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.__init__"><code class="docutils literal notranslate"><span class="pre">AuthController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.login"><code class="docutils literal notranslate"><span class="pre">AuthController.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.register"><code class="docutils literal notranslate"><span class="pre">AuthController.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.logout"><code class="docutils literal notranslate"><span class="pre">AuthController.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">AuthController.get_user_by_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.bus_controller">Bus Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController"><code class="docutils literal notranslate"><span class="pre">BusController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.__init__"><code class="docutils literal notranslate"><span class="pre">BusController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_all_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver"><code class="docutils literal notranslate"><span class="pre">BusController.get_buses_for_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_active_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_active_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.search_buses"><code class="docutils literal notranslate"><span class="pre">BusController.search_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.create_bus"><code class="docutils literal notranslate"><span class="pre">BusController.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.update_bus"><code class="docutils literal notranslate"><span class="pre">BusController.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.assign_driver"><code class="docutils literal notranslate"><span class="pre">BusController.assign_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_unassigned_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_with_driver_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.booking_controller">Booking Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController"><code class="docutils literal notranslate"><span class="pre">BookingController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.__init__"><code class="docutils literal notranslate"><span class="pre">BookingController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_user_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_user_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_confirmed_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_confirmed_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_occupied_seats"><code class="docutils literal notranslate"><span class="pre">BookingController.get_occupied_seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_seat_layout"><code class="docutils literal notranslate"><span class="pre">BookingController.get_seat_layout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.create_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.create_multiple_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.create_multiple_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.cancel_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.delete_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.delete_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_booking_with_bus"><code class="docutils literal notranslate"><span class="pre">BookingController.get_booking_with_bus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.user_controller">User Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController"><code class="docutils literal notranslate"><span class="pre">UserController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.__init__"><code class="docutils literal notranslate"><span class="pre">UserController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_users"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_drivers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_passengers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_passengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.create_driver"><code class="docutils literal notranslate"><span class="pre">UserController.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">UserController.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_user_statistics"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_statistics()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.landing">Landing View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.landing.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.auth">Authentication View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.user_portal">User Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.search_buses"><code class="docutils literal notranslate"><span class="pre">search_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_seats"><code class="docutils literal notranslate"><span class="pre">get_seats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_bookings"><code class="docutils literal notranslate"><span class="pre">get_bookings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_booking_detail"><code class="docutils literal notranslate"><span class="pre">get_booking_detail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.cancel_booking"><code class="docutils literal notranslate"><span class="pre">cancel_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.driver_portal">Driver Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.get_assigned_buses"><code class="docutils literal notranslate"><span class="pre">get_assigned_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.get_bus_detail"><code class="docutils literal notranslate"><span class="pre">get_bus_detail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.admin_portal">Admin Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_all_buses"><code class="docutils literal notranslate"><span class="pre">get_all_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.create_bus"><code class="docutils literal notranslate"><span class="pre">create_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.update_bus"><code class="docutils literal notranslate"><span class="pre">update_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.assign_driver"><code class="docutils literal notranslate"><span class="pre">assign_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">get_all_drivers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.create_driver"><code class="docutils literal notranslate"><span class="pre">create_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">get_unassigned_buses()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../services.html#module-app.services.supabase_service">Supabase Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService"><code class="docutils literal notranslate"><span class="pre">SupabaseService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.__init__"><code class="docutils literal notranslate"><span class="pre">SupabaseService.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.login"><code class="docutils literal notranslate"><span class="pre">SupabaseService.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.register"><code class="docutils literal notranslate"><span class="pre">SupabaseService.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.logout"><code class="docutils literal notranslate"><span class="pre">SupabaseService.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_all_users"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_all_buses"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_buses_by_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_buses_by_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.update_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.delete_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bookings_by_user"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bookings_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_bookings_for_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.cancel_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.delete_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.AuthenticationError"><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.RegistrationError"><code class="docutils literal notranslate"><span class="pre">RegistrationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.BookingError"><code class="docutils literal notranslate"><span class="pre">BookingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.DatabaseOperationError"><code class="docutils literal notranslate"><span class="pre">DatabaseOperationError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services.html#custom-exceptions">Custom Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">BusFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../../app.html">app</a></li>
+      <li class="breadcrumb-item active">app.controllers.bus_controller</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for app.controllers.bus_controller</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Bus controller for the BusFlow application.</span>
+
+<span class="sd">This module provides the BusController class that handles all</span>
+<span class="sd">bus-related business logic including fetching, creating, updating,</span>
+<span class="sd">and managing bus assignments.</span>
+
+<span class="sd">:module: app.controllers.bus_controller</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.models.bus</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.models.user</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.services.supabase_service</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SupabaseService</span><span class="p">,</span>
+    <span class="n">DatabaseOperationError</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">BUS_STATUS_ACTIVE</span>
+
+
+<div class="viewcode-block" id="BusController">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BusController</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Controller for handling bus operations.</span>
+<span class="sd">    </span>
+<span class="sd">    This controller manages all bus-related functionality including</span>
+<span class="sd">    fleet management, route searching, and driver assignments.</span>
+<span class="sd">    </span>
+<span class="sd">    Example::</span>
+<span class="sd">    </span>
+<span class="sd">        controller = BusController()</span>
+<span class="sd">        buses = controller.get_all_buses()</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+<div class="viewcode-block" id="BusController.__init__">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the BusController with a Supabase service instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span> <span class="o">=</span> <span class="n">SupabaseService</span><span class="p">()</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_all_buses">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_all_buses">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_all_buses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all buses in the fleet.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: List of Bus objects</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bus_data_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">get_all_buses</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Bus</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">bus_data_list</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_bus_by_id">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_bus_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch a specific bus by its ID.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bus_id: UUID of the bus</span>
+<span class="sd">        :type bus_id: str</span>
+<span class="sd">        :returns: Bus object or None</span>
+<span class="sd">        :rtype: Bus or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bus_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">get_bus_by_id</span><span class="p">(</span><span class="n">bus_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bus_data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Bus</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">bus_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_buses_for_driver">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_buses_for_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">driver_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all buses assigned to a specific driver.</span>
+<span class="sd">        </span>
+<span class="sd">        :param driver_id: UUID of the driver</span>
+<span class="sd">        :type driver_id: str</span>
+<span class="sd">        :returns: List of Bus objects</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">bus_data_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">get_buses_by_driver</span><span class="p">(</span><span class="n">driver_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Bus</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">bus_data_list</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_active_buses">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_active_buses">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_active_buses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all active buses available for booking.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: List of active Bus objects</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_buses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_buses</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">bus</span> <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">all_buses</span> <span class="k">if</span> <span class="n">bus</span><span class="o">.</span><span class="n">isActive</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="BusController.search_buses">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.search_buses">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_buses</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search for buses that travel from source to destination.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns only active buses where the source stop comes</span>
+<span class="sd">        before the destination stop in the route.</span>
+<span class="sd">        </span>
+<span class="sd">        :param source: Name of the boarding stop</span>
+<span class="sd">        :type source: str</span>
+<span class="sd">        :param destination: Name of the destination stop</span>
+<span class="sd">        :type destination: str</span>
+<span class="sd">        :returns: List of matching Bus objects</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        </span>
+<span class="sd">        Example::</span>
+<span class="sd">        </span>
+<span class="sd">            buses = controller.search_buses(&#39;Uttara&#39;, &#39;Motijheel&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_buses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_active_buses</span><span class="p">()</span>
+        <span class="n">matching_buses</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">all_buses</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">bus</span><span class="o">.</span><span class="n">is_valid_trip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+                <span class="n">matching_buses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bus</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">matching_buses</span></div>
+
+    
+<div class="viewcode-block" id="BusController.create_bus">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.create_bus">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_bus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">driver_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">BUS_STATUS_ACTIVE</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new bus in the fleet.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name: Display name of the bus</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param route: List of stops in order</span>
+<span class="sd">        :type route: list</span>
+<span class="sd">        :param price: Ticket price in BDT</span>
+<span class="sd">        :type price: int</span>
+<span class="sd">        :param driver_id: UUID of assigned driver (optional)</span>
+<span class="sd">        :type driver_id: str or None</span>
+<span class="sd">        :param status: Operational status</span>
+<span class="sd">        :type status: str</span>
+<span class="sd">        :returns: Tuple of (Bus object or None, error message or None)</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate inputs</span>
+        <span class="n">validation_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_bus_input</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">validation_error</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">validation_error</span>
+        
+        <span class="n">bus_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;route&#39;</span><span class="p">:</span> <span class="n">route</span><span class="p">,</span>
+            <span class="s1">&#39;total_seats&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+            <span class="s1">&#39;driver_id&#39;</span><span class="p">:</span> <span class="n">driver_id</span> <span class="k">if</span> <span class="n">driver_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">price</span><span class="p">),</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">status</span>
+        <span class="p">}</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">created_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">create_bus</span><span class="p">(</span><span class="n">bus_data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">created_data</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Bus</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">created_data</span><span class="p">),</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Failed to create bus.&quot;</span>
+        <span class="k">except</span> <span class="n">DatabaseOperationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BusController.update_bus">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.update_bus">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_bus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">driver_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">BUS_STATUS_ACTIVE</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update an existing bus.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bus_id: UUID of the bus to update</span>
+<span class="sd">        :type bus_id: str</span>
+<span class="sd">        :param name: New display name</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param route: New route list</span>
+<span class="sd">        :type route: list</span>
+<span class="sd">        :param price: New ticket price</span>
+<span class="sd">        :type price: int</span>
+<span class="sd">        :param driver_id: New driver assignment</span>
+<span class="sd">        :type driver_id: str or None</span>
+<span class="sd">        :param status: New operational status</span>
+<span class="sd">        :type status: str</span>
+<span class="sd">        :returns: Tuple of (Bus object or None, error message or None)</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate inputs</span>
+        <span class="n">validation_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_bus_input</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">validation_error</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">validation_error</span>
+        
+        <span class="n">bus_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;route&#39;</span><span class="p">:</span> <span class="n">route</span><span class="p">,</span>
+            <span class="s1">&#39;driver_id&#39;</span><span class="p">:</span> <span class="n">driver_id</span> <span class="k">if</span> <span class="n">driver_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">price</span><span class="p">),</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">status</span>
+        <span class="p">}</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">updated_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">update_bus</span><span class="p">(</span><span class="n">bus_id</span><span class="p">,</span> <span class="n">bus_data</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">updated_data</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Bus</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">updated_data</span><span class="p">),</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Failed to update bus.&quot;</span>
+        <span class="k">except</span> <span class="n">DatabaseOperationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="BusController.assign_driver">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.assign_driver">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assign_driver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus_id</span><span class="p">,</span> <span class="n">driver_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Assign a driver to a bus.</span>
+<span class="sd">        </span>
+<span class="sd">        :param bus_id: UUID of the bus</span>
+<span class="sd">        :type bus_id: str</span>
+<span class="sd">        :param driver_id: UUID of the driver</span>
+<span class="sd">        :type driver_id: str</span>
+<span class="sd">        :returns: Tuple of (success boolean, error message or None)</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">update_bus</span><span class="p">(</span><span class="n">bus_id</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;driver_id&#39;</span><span class="p">:</span> <span class="n">driver_id</span><span class="p">})</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;Failed to assign driver. Update returned no result.&quot;</span>
+        <span class="k">except</span> <span class="n">DatabaseOperationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Failed to assign driver: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_unassigned_buses">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_unassigned_buses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all buses without assigned drivers.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: List of Bus objects without drivers</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_buses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_buses</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">bus</span> <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">all_buses</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">bus</span><span class="o">.</span><span class="n">hasDriver</span><span class="p">]</span></div>
+
+    
+<div class="viewcode-block" id="BusController.get_bus_with_driver_info">
+<a class="viewcode-back" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_bus_with_driver_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all buses with their driver information.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: List of dictionaries with bus and driver data</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">buses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_buses</span><span class="p">()</span>
+        <span class="n">drivers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_all_drivers</span><span class="p">()</span>
+        <span class="n">driver_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">d</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">drivers</span><span class="p">}</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">buses</span><span class="p">:</span>
+            <span class="n">bus_info</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;bus&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="p">,</span>
+                <span class="s1">&#39;driver&#39;</span><span class="p">:</span> <span class="n">driver_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bus</span><span class="o">.</span><span class="n">driver_id</span><span class="p">)</span> <span class="k">if</span> <span class="n">bus</span><span class="o">.</span><span class="n">driver_id</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">}</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bus_info</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">result</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_all_drivers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch all users with driver role.</span>
+<span class="sd">        </span>
+<span class="sd">        :returns: List of User objects with driver role</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">driver_data_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supabase_service</span><span class="o">.</span><span class="n">get_users_by_role</span><span class="p">(</span><span class="s1">&#39;DRIVER&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">User</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">driver_data_list</span><span class="p">]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_bus_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate bus input fields.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name: Bus display name</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param route: Route stop list</span>
+<span class="sd">        :type route: list</span>
+<span class="sd">        :param price: Ticket price</span>
+<span class="sd">        :type price: int or str</span>
+<span class="sd">        :returns: Error message or None if valid</span>
+<span class="sd">        :rtype: str or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Bus name must be at least 2 characters.&quot;</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">route</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">route</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Route must have at least 2 stops.&quot;</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">price_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">price_int</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;Price must be greater than 0.&quot;</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;Price must be a valid number.&quot;</span>
+        
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, CSE327 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

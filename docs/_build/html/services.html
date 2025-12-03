@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services &mdash; BusFlow Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Views" href="views.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BusFlow
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app">Application Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app.config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.user">User Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.__init__"><code class="docutils literal notranslate"><span class="pre">User.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.get_id"><code class="docutils literal notranslate"><span class="pre">User.get_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isAdmin"><code class="docutils literal notranslate"><span class="pre">User.isAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isDriver"><code class="docutils literal notranslate"><span class="pre">User.isDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isUser"><code class="docutils literal notranslate"><span class="pre">User.isUser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.from_dict"><code class="docutils literal notranslate"><span class="pre">User.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.__repr__"><code class="docutils literal notranslate"><span class="pre">User.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.bus">Bus Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.isActive"><code class="docutils literal notranslate"><span class="pre">Bus.isActive</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.start_stop"><code class="docutils literal notranslate"><span class="pre">Bus.start_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.end_stop"><code class="docutils literal notranslate"><span class="pre">Bus.end_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.route_display"><code class="docutils literal notranslate"><span class="pre">Bus.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.hasDriver"><code class="docutils literal notranslate"><span class="pre">Bus.hasDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.get_stop_count"><code class="docutils literal notranslate"><span class="pre">Bus.get_stop_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.is_valid_trip"><code class="docutils literal notranslate"><span class="pre">Bus.is_valid_trip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.from_dict"><code class="docutils literal notranslate"><span class="pre">Bus.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.to_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.booking">Booking Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.booking.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.__init__"><code class="docutils literal notranslate"><span class="pre">Booking.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.isConfirmed"><code class="docutils literal notranslate"><span class="pre">Booking.isConfirmed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.isCancelled"><code class="docutils literal notranslate"><span class="pre">Booking.isCancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.route_display"><code class="docutils literal notranslate"><span class="pre">Booking.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.formatted_date"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.formatted_time"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.from_dict"><code class="docutils literal notranslate"><span class="pre">Booking.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.to_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.__repr__"><code class="docutils literal notranslate"><span class="pre">Booking.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.auth_controller">Authentication Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController"><code class="docutils literal notranslate"><span class="pre">AuthController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.__init__"><code class="docutils literal notranslate"><span class="pre">AuthController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.login"><code class="docutils literal notranslate"><span class="pre">AuthController.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.register"><code class="docutils literal notranslate"><span class="pre">AuthController.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.logout"><code class="docutils literal notranslate"><span class="pre">AuthController.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">AuthController.get_user_by_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.bus_controller">Bus Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController"><code class="docutils literal notranslate"><span class="pre">BusController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.__init__"><code class="docutils literal notranslate"><span class="pre">BusController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_all_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver"><code class="docutils literal notranslate"><span class="pre">BusController.get_buses_for_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_active_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_active_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.search_buses"><code class="docutils literal notranslate"><span class="pre">BusController.search_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.create_bus"><code class="docutils literal notranslate"><span class="pre">BusController.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.update_bus"><code class="docutils literal notranslate"><span class="pre">BusController.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.assign_driver"><code class="docutils literal notranslate"><span class="pre">BusController.assign_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_unassigned_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_with_driver_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.booking_controller">Booking Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController"><code class="docutils literal notranslate"><span class="pre">BookingController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.__init__"><code class="docutils literal notranslate"><span class="pre">BookingController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_user_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_user_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_confirmed_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_confirmed_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_occupied_seats"><code class="docutils literal notranslate"><span class="pre">BookingController.get_occupied_seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_seat_layout"><code class="docutils literal notranslate"><span class="pre">BookingController.get_seat_layout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_multiple_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.create_multiple_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.cancel_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.delete_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.delete_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_booking_with_bus"><code class="docutils literal notranslate"><span class="pre">BookingController.get_booking_with_bus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.user_controller">User Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController"><code class="docutils literal notranslate"><span class="pre">UserController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.__init__"><code class="docutils literal notranslate"><span class="pre">UserController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_users"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_drivers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_passengers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_passengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.create_driver"><code class="docutils literal notranslate"><span class="pre">UserController.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">UserController.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_statistics"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_statistics()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.landing">Landing View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.landing.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.auth">Authentication View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.user_portal">User Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.search_buses"><code class="docutils literal notranslate"><span class="pre">search_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_seats"><code class="docutils literal notranslate"><span class="pre">get_seats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_bookings"><code class="docutils literal notranslate"><span class="pre">get_bookings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_booking_detail"><code class="docutils literal notranslate"><span class="pre">get_booking_detail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.cancel_booking"><code class="docutils literal notranslate"><span class="pre">cancel_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.driver_portal">Driver Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.get_assigned_buses"><code class="docutils literal notranslate"><span class="pre">get_assigned_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.get_bus_detail"><code class="docutils literal notranslate"><span class="pre">get_bus_detail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.admin_portal">Admin Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_all_buses"><code class="docutils literal notranslate"><span class="pre">get_all_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.create_bus"><code class="docutils literal notranslate"><span class="pre">create_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.update_bus"><code class="docutils literal notranslate"><span class="pre">update_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.assign_driver"><code class="docutils literal notranslate"><span class="pre">assign_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">get_all_drivers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.create_driver"><code class="docutils literal notranslate"><span class="pre">create_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">get_unassigned_buses()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.services.supabase_service">Supabase Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.services.supabase_service.SupabaseService"><code class="docutils literal notranslate"><span class="pre">SupabaseService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.__init__"><code class="docutils literal notranslate"><span class="pre">SupabaseService.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.login"><code class="docutils literal notranslate"><span class="pre">SupabaseService.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.register"><code class="docutils literal notranslate"><span class="pre">SupabaseService.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.logout"><code class="docutils literal notranslate"><span class="pre">SupabaseService.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_all_users"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.create_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_all_buses"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_buses_by_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_buses_by_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.create_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.update_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.delete_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_bookings_by_user"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bookings_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_bookings_for_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.create_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.cancel_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.services.supabase_service.SupabaseService.delete_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#app.services.supabase_service.AuthenticationError"><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.services.supabase_service.RegistrationError"><code class="docutils literal notranslate"><span class="pre">RegistrationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.services.supabase_service.BookingError"><code class="docutils literal notranslate"><span class="pre">BookingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.services.supabase_service.DatabaseOperationError"><code class="docutils literal notranslate"><span class="pre">DatabaseOperationError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-exceptions">Custom Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BusFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/services.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="services">
+<h1>Services<a class="headerlink" href="#services" title="Link to this heading"></a></h1>
+<p>The services package contains classes that handle external integrations
+and database operations. Services abstract away the complexity of
+interacting with external systems like Supabase.</p>
+<section id="module-app.services.supabase_service">
+<span id="supabase-service"></span><h2>Supabase Service<a class="headerlink" href="#module-app.services.supabase_service" title="Link to this heading"></a></h2>
+<p>Supabase service for database operations.</p>
+<p>This module provides the SupabaseService class that handles all
+interactions with the Supabase backend, including authentication
+and CRUD operations for all database tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.services.supabase_service</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.supabase_service.</span></span><span class="sig-name descname"><span class="pre">SupabaseService</span></span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Service class for Supabase database operations.</p>
+<p>This class encapsulates all database operations using the Supabase client,
+providing methods for authentication, user management, bus management,
+and booking operations.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="o">=</span> <span class="n">SupabaseService</span><span class="p">()</span>
+<span class="n">user_data</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;password123&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the Supabase client connection.
+Restores auth session if available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.login" title="Link to this definition"></a></dt>
+<dd><p>Authenticate a user with email and password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s email address</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>User profile data if successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#app.services.supabase_service.AuthenticationError" title="app.services.supabase_service.AuthenticationError"><strong>AuthenticationError</strong></a> – If credentials are invalid</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user_data</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;password123&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'USER'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.register" title="Link to this definition"></a></dt>
+<dd><p>Register a new user account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s full name</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s email address</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s chosen password</p></li>
+<li><p><strong>role</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User role (defaults to ‘USER’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created user profile data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#app.services.supabase_service.RegistrationError" title="app.services.supabase_service.RegistrationError"><strong>RegistrationError</strong></a> – If registration fails</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.logout">
+<span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.logout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.logout" title="Link to this definition"></a></dt>
+<dd><p>Sign out the current user.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_user_by_id">
+<span class="sig-name descname"><span class="pre">get_user_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_user_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_user_by_id" title="Link to this definition"></a></dt>
+<dd><p>Fetch a user profile by their ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the user</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>User profile data or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_all_users">
+<span class="sig-name descname"><span class="pre">get_all_users</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_all_users"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_all_users" title="Link to this definition"></a></dt>
+<dd><p>Fetch all users from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of user profile dictionaries</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_users_by_role">
+<span class="sig-name descname"><span class="pre">get_users_by_role</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_users_by_role"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_users_by_role" title="Link to this definition"></a></dt>
+<dd><p>Fetch all users with a specific role.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>role</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Role to filter by (USER, DRIVER, ADMIN)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of user profile dictionaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.create_driver">
+<span class="sig-name descname"><span class="pre">create_driver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.create_driver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.create_driver" title="Link to this definition"></a></dt>
+<dd><p>Create a new driver account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Driver’s full name</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Driver’s email address</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Initial password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created driver profile data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_all_buses">
+<span class="sig-name descname"><span class="pre">get_all_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_all_buses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_all_buses" title="Link to this definition"></a></dt>
+<dd><p>Fetch all buses from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of bus dictionaries</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_bus_by_id">
+<span class="sig-name descname"><span class="pre">get_bus_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_bus_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_bus_by_id" title="Link to this definition"></a></dt>
+<dd><p>Fetch a specific bus by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bus data or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_buses_by_driver">
+<span class="sig-name descname"><span class="pre">get_buses_by_driver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">driver_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_buses_by_driver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_buses_by_driver" title="Link to this definition"></a></dt>
+<dd><p>Fetch all buses assigned to a specific driver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>driver_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the driver</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of bus dictionaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.create_bus">
+<span class="sig-name descname"><span class="pre">create_bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.create_bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.create_bus" title="Link to this definition"></a></dt>
+<dd><p>Create a new bus in the fleet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing bus information</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created bus data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.update_bus">
+<span class="sig-name descname"><span class="pre">update_bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.update_bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.update_bus" title="Link to this definition"></a></dt>
+<dd><p>Update an existing bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus to update</p></li>
+<li><p><strong>bus_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing updated bus information</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Updated bus data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.delete_bus">
+<span class="sig-name descname"><span class="pre">delete_bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.delete_bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.delete_bus" title="Link to this definition"></a></dt>
+<dd><p>Delete a bus from the fleet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus to delete</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_bookings_by_user">
+<span class="sig-name descname"><span class="pre">get_bookings_by_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_bookings_by_user"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_bookings_by_user" title="Link to this definition"></a></dt>
+<dd><p>Fetch all bookings for a specific user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the user</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of booking dictionaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.get_bus_bookings_for_date">
+<span class="sig-name descname"><span class="pre">get_bus_bookings_for_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.get_bus_bookings_for_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date" title="Link to this definition"></a></dt>
+<dd><p>Fetch confirmed bookings for a bus on a specific date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus</p></li>
+<li><p><strong>date_str</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Date string (ISO format)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of booking dictionaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.create_booking">
+<span class="sig-name descname"><span class="pre">create_booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.create_booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.create_booking" title="Link to this definition"></a></dt>
+<dd><p>Create a new ticket booking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>booking_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing booking information</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Created booking data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a> or None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#app.services.supabase_service.BookingError" title="app.services.supabase_service.BookingError"><strong>BookingError</strong></a> – If seat is already booked</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.cancel_booking">
+<span class="sig-name descname"><span class="pre">cancel_booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.cancel_booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.cancel_booking" title="Link to this definition"></a></dt>
+<dd><p>Cancel a booking by updating its status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the booking</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.supabase_service.SupabaseService.delete_booking">
+<span class="sig-name descname"><span class="pre">delete_booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/services/supabase_service.html#SupabaseService.delete_booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.SupabaseService.delete_booking" title="Link to this definition"></a></dt>
+<dd><p>Permanently delete a booking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the booking</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="app.services.supabase_service.AuthenticationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.supabase_service.</span></span><span class="sig-name descname"><span class="pre">AuthenticationError</span></span><a class="reference internal" href="_modules/app/services/supabase_service.html#AuthenticationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.AuthenticationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception raised for authentication failures.</p>
+<p>This exception is raised when login credentials are invalid
+or authentication otherwise fails.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="app.services.supabase_service.RegistrationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.supabase_service.</span></span><span class="sig-name descname"><span class="pre">RegistrationError</span></span><a class="reference internal" href="_modules/app/services/supabase_service.html#RegistrationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.RegistrationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception raised for registration failures.</p>
+<p>This exception is raised when user registration fails,
+such as when email is already in use.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="app.services.supabase_service.BookingError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.supabase_service.</span></span><span class="sig-name descname"><span class="pre">BookingError</span></span><a class="reference internal" href="_modules/app/services/supabase_service.html#BookingError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.BookingError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception raised for booking failures.</p>
+<p>This exception is raised when a booking cannot be completed,
+such as when a seat is already taken.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="app.services.supabase_service.DatabaseOperationError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.supabase_service.</span></span><span class="sig-name descname"><span class="pre">DatabaseOperationError</span></span><a class="reference internal" href="_modules/app/services/supabase_service.html#DatabaseOperationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.services.supabase_service.DatabaseOperationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Exception raised for general database operation failures.</p>
+<p>This exception is raised for CRUD operations that fail
+for reasons other than specific business logic.</p>
+</dd></dl>
+
+</section>
+<section id="custom-exceptions">
+<h2>Custom Exceptions<a class="headerlink" href="#custom-exceptions" title="Link to this heading"></a></h2>
+<p>The following custom exceptions are defined for error handling:</p>
+<ul class="simple">
+<li><p><strong>AuthenticationError</strong>: Raised when login credentials are invalid</p></li>
+<li><p><strong>RegistrationError</strong>: Raised when user registration fails</p></li>
+<li><p><strong>BookingError</strong>: Raised when a booking cannot be completed</p></li>
+<li><p><strong>DatabaseOperationError</strong>: Raised for general database operation failures</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="views.html" class="btn btn-neutral float-left" title="Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, CSE327 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

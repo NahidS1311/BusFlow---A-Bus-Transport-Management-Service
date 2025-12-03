@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Views &mdash; BusFlow Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Services" href="services.html" />
+    <link rel="prev" title="Controllers" href="controllers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BusFlow
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app">Application Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app.config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.user">User Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.__init__"><code class="docutils literal notranslate"><span class="pre">User.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.get_id"><code class="docutils literal notranslate"><span class="pre">User.get_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isAdmin"><code class="docutils literal notranslate"><span class="pre">User.isAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isDriver"><code class="docutils literal notranslate"><span class="pre">User.isDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.isUser"><code class="docutils literal notranslate"><span class="pre">User.isUser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.from_dict"><code class="docutils literal notranslate"><span class="pre">User.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.user.User.__repr__"><code class="docutils literal notranslate"><span class="pre">User.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.bus">Bus Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.isActive"><code class="docutils literal notranslate"><span class="pre">Bus.isActive</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.start_stop"><code class="docutils literal notranslate"><span class="pre">Bus.start_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.end_stop"><code class="docutils literal notranslate"><span class="pre">Bus.end_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.route_display"><code class="docutils literal notranslate"><span class="pre">Bus.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.hasDriver"><code class="docutils literal notranslate"><span class="pre">Bus.hasDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.get_stop_count"><code class="docutils literal notranslate"><span class="pre">Bus.get_stop_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.is_valid_trip"><code class="docutils literal notranslate"><span class="pre">Bus.is_valid_trip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.from_dict"><code class="docutils literal notranslate"><span class="pre">Bus.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.to_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-app.models.booking">Booking Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.booking.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.__init__"><code class="docutils literal notranslate"><span class="pre">Booking.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.isConfirmed"><code class="docutils literal notranslate"><span class="pre">Booking.isConfirmed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.isCancelled"><code class="docutils literal notranslate"><span class="pre">Booking.isCancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.route_display"><code class="docutils literal notranslate"><span class="pre">Booking.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.formatted_date"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.formatted_time"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.from_dict"><code class="docutils literal notranslate"><span class="pre">Booking.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.to_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.html#app.models.booking.Booking.__repr__"><code class="docutils literal notranslate"><span class="pre">Booking.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.auth_controller">Authentication Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController"><code class="docutils literal notranslate"><span class="pre">AuthController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.__init__"><code class="docutils literal notranslate"><span class="pre">AuthController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.login"><code class="docutils literal notranslate"><span class="pre">AuthController.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.register"><code class="docutils literal notranslate"><span class="pre">AuthController.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.logout"><code class="docutils literal notranslate"><span class="pre">AuthController.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">AuthController.get_user_by_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.bus_controller">Bus Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController"><code class="docutils literal notranslate"><span class="pre">BusController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.__init__"><code class="docutils literal notranslate"><span class="pre">BusController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_all_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver"><code class="docutils literal notranslate"><span class="pre">BusController.get_buses_for_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_active_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_active_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.search_buses"><code class="docutils literal notranslate"><span class="pre">BusController.search_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.create_bus"><code class="docutils literal notranslate"><span class="pre">BusController.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.update_bus"><code class="docutils literal notranslate"><span class="pre">BusController.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.assign_driver"><code class="docutils literal notranslate"><span class="pre">BusController.assign_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_unassigned_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_with_driver_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.booking_controller">Booking Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController"><code class="docutils literal notranslate"><span class="pre">BookingController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.__init__"><code class="docutils literal notranslate"><span class="pre">BookingController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_user_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_user_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_confirmed_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_confirmed_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_occupied_seats"><code class="docutils literal notranslate"><span class="pre">BookingController.get_occupied_seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_seat_layout"><code class="docutils literal notranslate"><span class="pre">BookingController.get_seat_layout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_multiple_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.create_multiple_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.cancel_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.delete_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.delete_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_booking_with_bus"><code class="docutils literal notranslate"><span class="pre">BookingController.get_booking_with_bus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.user_controller">User Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController"><code class="docutils literal notranslate"><span class="pre">UserController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.__init__"><code class="docutils literal notranslate"><span class="pre">UserController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_users"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_drivers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_passengers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_passengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.create_driver"><code class="docutils literal notranslate"><span class="pre">UserController.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">UserController.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_statistics"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_statistics()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.views.landing">Landing View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.landing.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.views.auth">Authentication View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.auth.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.auth.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.views.user_portal">User Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.search_buses"><code class="docutils literal notranslate"><span class="pre">search_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.get_seats"><code class="docutils literal notranslate"><span class="pre">get_seats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.get_bookings"><code class="docutils literal notranslate"><span class="pre">get_bookings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.get_booking_detail"><code class="docutils literal notranslate"><span class="pre">get_booking_detail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.user_portal.cancel_booking"><code class="docutils literal notranslate"><span class="pre">cancel_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.views.driver_portal">Driver Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.driver_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.driver_portal.get_assigned_buses"><code class="docutils literal notranslate"><span class="pre">get_assigned_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.driver_portal.get_bus_detail"><code class="docutils literal notranslate"><span class="pre">get_bus_detail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.views.admin_portal">Admin Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.get_all_buses"><code class="docutils literal notranslate"><span class="pre">get_all_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.create_bus"><code class="docutils literal notranslate"><span class="pre">create_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.update_bus"><code class="docutils literal notranslate"><span class="pre">update_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.assign_driver"><code class="docutils literal notranslate"><span class="pre">assign_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">get_all_drivers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.create_driver"><code class="docutils literal notranslate"><span class="pre">create_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app.views.admin_portal.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">get_unassigned_buses()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="services.html#module-app.services.supabase_service">Supabase Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService"><code class="docutils literal notranslate"><span class="pre">SupabaseService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.__init__"><code class="docutils literal notranslate"><span class="pre">SupabaseService.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.login"><code class="docutils literal notranslate"><span class="pre">SupabaseService.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.register"><code class="docutils literal notranslate"><span class="pre">SupabaseService.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.logout"><code class="docutils literal notranslate"><span class="pre">SupabaseService.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_all_users"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_all_buses"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_buses_by_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_buses_by_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.update_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.delete_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bookings_by_user"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bookings_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_bookings_for_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.cancel_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.delete_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.AuthenticationError"><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.RegistrationError"><code class="docutils literal notranslate"><span class="pre">RegistrationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.BookingError"><code class="docutils literal notranslate"><span class="pre">BookingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.DatabaseOperationError"><code class="docutils literal notranslate"><span class="pre">DatabaseOperationError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#custom-exceptions">Custom Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BusFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Views</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/views.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="views">
+<h1>Views<a class="headerlink" href="#views" title="Link to this heading"></a></h1>
+<p>The views package contains Flask blueprints that handle HTTP requests,
+interact with controllers, and render templates. Each view module
+corresponds to a specific portal or functionality.</p>
+<section id="module-app.views.landing">
+<span id="landing-view"></span><h2>Landing View<a class="headerlink" href="#module-app.views.landing" title="Link to this heading"></a></h2>
+<p>Landing page view for the BusFlow application.</p>
+<p>This module defines the routes for the public landing page
+that introduces the BusFlow platform to visitors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.views.landing</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.landing.index">
+<span class="sig-prename descclassname"><span class="pre">app.views.landing.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/landing.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.landing.index" title="Link to this definition"></a></dt>
+<dd><p>Render the landing page.</p>
+<p>Displays the main marketing page with information about
+the BusFlow platform and links to the different portals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered landing page template</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.views.auth">
+<span id="authentication-view"></span><h2>Authentication View<a class="headerlink" href="#module-app.views.auth" title="Link to this heading"></a></h2>
+<p>Authentication views for the BusFlow application.</p>
+<p>This module defines the routes for user authentication including
+login, registration, and logout functionality.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.views.auth</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.auth.login">
+<span class="sig-prename descclassname"><span class="pre">app.views.auth.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portal_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/auth.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.auth.login" title="Link to this definition"></a></dt>
+<dd><p>Handle user login for a specific portal.</p>
+<p>GET: Display the login form
+POST: Process login credentials</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>portal_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Type of portal (user, driver, admin)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rendered template or redirect</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a> or Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.auth.register">
+<span class="sig-prename descclassname"><span class="pre">app.views.auth.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/auth.html#register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.auth.register" title="Link to this definition"></a></dt>
+<dd><p>Handle user registration (passengers only).</p>
+<p>GET: Display the registration form
+POST: Process registration details</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered template or redirect</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a> or Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.auth.logout">
+<span class="sig-prename descclassname"><span class="pre">app.views.auth.</span></span><span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/auth.html#logout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.auth.logout" title="Link to this definition"></a></dt>
+<dd><p>Log out the current user and redirect to landing page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redirect to landing page</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.views.user_portal">
+<span id="user-portal-view"></span><h2>User Portal View<a class="headerlink" href="#module-app.views.user_portal" title="Link to this heading"></a></h2>
+<p>User portal views for the BusFlow application.</p>
+<p>This module defines the routes for the passenger portal including
+bus search, seat selection, booking management, and ticket cancellation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.views.user_portal</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.dashboard">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">dashboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#dashboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.dashboard" title="Link to this definition"></a></dt>
+<dd><p>Render the user dashboard with search and booking tabs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered dashboard template</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.search_buses">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">search_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#search_buses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.search_buses" title="Link to this definition"></a></dt>
+<dd><p>Search for buses matching the route criteria.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with matching buses</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.get_seats">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">get_seats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#get_seats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.get_seats" title="Link to this definition"></a></dt>
+<dd><p>Get seat availability for a specific bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with seat layout</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.create_booking">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">create_booking</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#create_booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.create_booking" title="Link to this definition"></a></dt>
+<dd><p>Create a new booking for selected seats.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with booking result</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.get_bookings">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">get_bookings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#get_bookings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.get_bookings" title="Link to this definition"></a></dt>
+<dd><p>Get all bookings for the current user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with user’s bookings</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.get_booking_detail">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">get_booking_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#get_booking_detail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.get_booking_detail" title="Link to this definition"></a></dt>
+<dd><p>Get details of a specific booking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the booking</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with booking details</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.user_portal.cancel_booking">
+<span class="sig-prename descclassname"><span class="pre">app.views.user_portal.</span></span><span class="sig-name descname"><span class="pre">cancel_booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/user_portal.html#cancel_booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.user_portal.cancel_booking" title="Link to this definition"></a></dt>
+<dd><p>Cancel a specific booking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the booking to cancel</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with cancellation result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.views.driver_portal">
+<span id="driver-portal-view"></span><h2>Driver Portal View<a class="headerlink" href="#module-app.views.driver_portal" title="Link to this heading"></a></h2>
+<p>Driver portal views for the BusFlow application.</p>
+<p>This module defines the routes for the driver portal including
+viewing assigned buses and route information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.views.driver_portal</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.driver_portal.dashboard">
+<span class="sig-prename descclassname"><span class="pre">app.views.driver_portal.</span></span><span class="sig-name descname"><span class="pre">dashboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/driver_portal.html#dashboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.driver_portal.dashboard" title="Link to this definition"></a></dt>
+<dd><p>Render the driver dashboard with assigned buses.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered dashboard template</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.driver_portal.get_assigned_buses">
+<span class="sig-prename descclassname"><span class="pre">app.views.driver_portal.</span></span><span class="sig-name descname"><span class="pre">get_assigned_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/driver_portal.html#get_assigned_buses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.driver_portal.get_assigned_buses" title="Link to this definition"></a></dt>
+<dd><p>Get all buses assigned to the current driver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with assigned buses</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.driver_portal.get_bus_detail">
+<span class="sig-prename descclassname"><span class="pre">app.views.driver_portal.</span></span><span class="sig-name descname"><span class="pre">get_bus_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/driver_portal.html#get_bus_detail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.driver_portal.get_bus_detail" title="Link to this definition"></a></dt>
+<dd><p>Get details of a specific assigned bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with bus details</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.views.admin_portal">
+<span id="admin-portal-view"></span><h2>Admin Portal View<a class="headerlink" href="#module-app.views.admin_portal" title="Link to this heading"></a></h2>
+<p>Admin portal views for the BusFlow application.</p>
+<p>This module defines the routes for the administrator portal including
+fleet management, driver assignment, and driver creation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.views.admin_portal</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.dashboard">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">dashboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#dashboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.dashboard" title="Link to this definition"></a></dt>
+<dd><p>Render the admin dashboard with fleet and user management.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Rendered dashboard template</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.get_all_buses">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">get_all_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#get_all_buses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.get_all_buses" title="Link to this definition"></a></dt>
+<dd><p>Get all buses in the fleet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with all buses</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.create_bus">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">create_bus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#create_bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.create_bus" title="Link to this definition"></a></dt>
+<dd><p>Create a new bus in the fleet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with creation result</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.update_bus">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">update_bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#update_bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.update_bus" title="Link to this definition"></a></dt>
+<dd><p>Update an existing bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus to update</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with update result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.assign_driver">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">assign_driver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#assign_driver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.assign_driver" title="Link to this definition"></a></dt>
+<dd><p>Assign a driver to a bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID of the bus</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>JSON response with assignment result</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.get_all_drivers">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">get_all_drivers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#get_all_drivers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.get_all_drivers" title="Link to this definition"></a></dt>
+<dd><p>Get all drivers in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with all drivers</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.create_driver">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">create_driver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#create_driver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.create_driver" title="Link to this definition"></a></dt>
+<dd><p>Create a new driver account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with creation result</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.views.admin_portal.get_unassigned_buses">
+<span class="sig-prename descclassname"><span class="pre">app.views.admin_portal.</span></span><span class="sig-name descname"><span class="pre">get_unassigned_buses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/views/admin_portal.html#get_unassigned_buses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.views.admin_portal.get_unassigned_buses" title="Link to this definition"></a></dt>
+<dd><p>Get all buses without assigned drivers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON response with unassigned buses</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="controllers.html" class="btn btn-neutral float-left" title="Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="services.html" class="btn btn-neutral float-right" title="Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, CSE327 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

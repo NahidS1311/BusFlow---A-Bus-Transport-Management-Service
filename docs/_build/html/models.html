@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Models &mdash; BusFlow Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Controllers" href="controllers.html" />
+    <link rel="prev" title="Modules Overview" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BusFlow
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app">Application Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#module-app.config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.models.user">User Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.__init__"><code class="docutils literal notranslate"><span class="pre">User.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.get_id"><code class="docutils literal notranslate"><span class="pre">User.get_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.isAdmin"><code class="docutils literal notranslate"><span class="pre">User.isAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.isDriver"><code class="docutils literal notranslate"><span class="pre">User.isDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.isUser"><code class="docutils literal notranslate"><span class="pre">User.isUser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.from_dict"><code class="docutils literal notranslate"><span class="pre">User.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.user.User.__repr__"><code class="docutils literal notranslate"><span class="pre">User.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.models.bus">Bus Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.models.bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.isActive"><code class="docutils literal notranslate"><span class="pre">Bus.isActive</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.start_stop"><code class="docutils literal notranslate"><span class="pre">Bus.start_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.end_stop"><code class="docutils literal notranslate"><span class="pre">Bus.end_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.route_display"><code class="docutils literal notranslate"><span class="pre">Bus.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.hasDriver"><code class="docutils literal notranslate"><span class="pre">Bus.hasDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.get_stop_count"><code class="docutils literal notranslate"><span class="pre">Bus.get_stop_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.is_valid_trip"><code class="docutils literal notranslate"><span class="pre">Bus.is_valid_trip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.from_dict"><code class="docutils literal notranslate"><span class="pre">Bus.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.to_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.models.booking">Booking Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app.models.booking.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.__init__"><code class="docutils literal notranslate"><span class="pre">Booking.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.isConfirmed"><code class="docutils literal notranslate"><span class="pre">Booking.isConfirmed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.isCancelled"><code class="docutils literal notranslate"><span class="pre">Booking.isCancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.route_display"><code class="docutils literal notranslate"><span class="pre">Booking.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.formatted_date"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.formatted_time"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.from_dict"><code class="docutils literal notranslate"><span class="pre">Booking.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.to_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#app.models.booking.Booking.__repr__"><code class="docutils literal notranslate"><span class="pre">Booking.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.auth_controller">Authentication Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController"><code class="docutils literal notranslate"><span class="pre">AuthController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.__init__"><code class="docutils literal notranslate"><span class="pre">AuthController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.login"><code class="docutils literal notranslate"><span class="pre">AuthController.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.register"><code class="docutils literal notranslate"><span class="pre">AuthController.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.logout"><code class="docutils literal notranslate"><span class="pre">AuthController.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.auth_controller.AuthController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">AuthController.get_user_by_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.bus_controller">Bus Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController"><code class="docutils literal notranslate"><span class="pre">BusController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.__init__"><code class="docutils literal notranslate"><span class="pre">BusController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_all_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver"><code class="docutils literal notranslate"><span class="pre">BusController.get_buses_for_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_active_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_active_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.search_buses"><code class="docutils literal notranslate"><span class="pre">BusController.search_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.create_bus"><code class="docutils literal notranslate"><span class="pre">BusController.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.update_bus"><code class="docutils literal notranslate"><span class="pre">BusController.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.assign_driver"><code class="docutils literal notranslate"><span class="pre">BusController.assign_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_unassigned_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_with_driver_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.booking_controller">Booking Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController"><code class="docutils literal notranslate"><span class="pre">BookingController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.__init__"><code class="docutils literal notranslate"><span class="pre">BookingController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_user_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_user_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_confirmed_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_confirmed_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_occupied_seats"><code class="docutils literal notranslate"><span class="pre">BookingController.get_occupied_seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_seat_layout"><code class="docutils literal notranslate"><span class="pre">BookingController.get_seat_layout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.create_multiple_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.create_multiple_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.cancel_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.delete_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.delete_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.booking_controller.BookingController.get_booking_with_bus"><code class="docutils literal notranslate"><span class="pre">BookingController.get_booking_with_bus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#module-app.controllers.user_controller">User Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController"><code class="docutils literal notranslate"><span class="pre">UserController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.__init__"><code class="docutils literal notranslate"><span class="pre">UserController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_users"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_drivers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_all_passengers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_passengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.create_driver"><code class="docutils literal notranslate"><span class="pre">UserController.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">UserController.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="controllers.html#app.controllers.user_controller.UserController.get_user_statistics"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_statistics()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.landing">Landing View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.landing.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.auth">Authentication View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.auth.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.user_portal">User Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.search_buses"><code class="docutils literal notranslate"><span class="pre">search_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_seats"><code class="docutils literal notranslate"><span class="pre">get_seats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_bookings"><code class="docutils literal notranslate"><span class="pre">get_bookings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.get_booking_detail"><code class="docutils literal notranslate"><span class="pre">get_booking_detail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.user_portal.cancel_booking"><code class="docutils literal notranslate"><span class="pre">cancel_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.driver_portal">Driver Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.get_assigned_buses"><code class="docutils literal notranslate"><span class="pre">get_assigned_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.driver_portal.get_bus_detail"><code class="docutils literal notranslate"><span class="pre">get_bus_detail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#module-app.views.admin_portal">Admin Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_all_buses"><code class="docutils literal notranslate"><span class="pre">get_all_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.create_bus"><code class="docutils literal notranslate"><span class="pre">create_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.update_bus"><code class="docutils literal notranslate"><span class="pre">update_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.assign_driver"><code class="docutils literal notranslate"><span class="pre">assign_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">get_all_drivers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.create_driver"><code class="docutils literal notranslate"><span class="pre">create_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html#app.views.admin_portal.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">get_unassigned_buses()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="services.html#module-app.services.supabase_service">Supabase Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService"><code class="docutils literal notranslate"><span class="pre">SupabaseService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.__init__"><code class="docutils literal notranslate"><span class="pre">SupabaseService.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.login"><code class="docutils literal notranslate"><span class="pre">SupabaseService.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.register"><code class="docutils literal notranslate"><span class="pre">SupabaseService.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.logout"><code class="docutils literal notranslate"><span class="pre">SupabaseService.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_all_users"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_all_buses"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_buses_by_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_buses_by_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.update_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.delete_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bookings_by_user"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bookings_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_bookings_for_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.create_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.cancel_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="services.html#app.services.supabase_service.SupabaseService.delete_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.AuthenticationError"><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.RegistrationError"><code class="docutils literal notranslate"><span class="pre">RegistrationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.BookingError"><code class="docutils literal notranslate"><span class="pre">BookingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="services.html#app.services.supabase_service.DatabaseOperationError"><code class="docutils literal notranslate"><span class="pre">DatabaseOperationError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="services.html#custom-exceptions">Custom Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BusFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="models">
+<h1>Models<a class="headerlink" href="#models" title="Link to this heading"></a></h1>
+<p>The models package contains data structures that represent the core entities
+in the BusFlow system. All models follow Python naming conventions with
+PascalCase for class names.</p>
+<section id="module-app.models.user">
+<span id="user-model"></span><h2>User Model<a class="headerlink" href="#module-app.models.user" title="Link to this heading"></a></h2>
+<p>User model for the BusFlow application.</p>
+<p>This module defines the User class that represents all types of users
+in the system: passengers (USER), drivers (DRIVER), and administrators (ADMIN).</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.models.user</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.models.user.User">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.models.user.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserMixin</span></code></p>
+<p>Represents a user in the BusFlow system.</p>
+<p>Users can have one of three roles:
+- USER: Regular passengers who book tickets
+- DRIVER: Bus drivers who view their assignments
+- ADMIN: Administrators who manage the fleet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the user (UUID from Supabase)</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s email address for authentication</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s display name</p></li>
+<li><p><strong>role</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s role (USER, DRIVER, or ADMIN)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s1">&#39;uuid-123&#39;</span><span class="p">,</span>
+    <span class="n">email</span><span class="o">=</span><span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+    <span class="n">role</span><span class="o">=</span><span class="s1">&#39;USER&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.user.User.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize a new User instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the user</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s email address</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s display name</p></li>
+<li><p><strong>role</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User’s role in the system</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.user.User.get_id">
+<span class="sig-name descname"><span class="pre">get_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User.get_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User.get_id" title="Link to this definition"></a></dt>
+<dd><p>Return the unique identifier for Flask-Login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>User’s unique identifier</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.user.User.isAdmin">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isAdmin</span></span><a class="headerlink" href="#app.models.user.User.isAdmin" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is an administrator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if user has admin role, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.user.User.isDriver">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isDriver</span></span><a class="headerlink" href="#app.models.user.User.isDriver" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is a driver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if user has driver role, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.user.User.isUser">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isUser</span></span><a class="headerlink" href="#app.models.user.User.isUser" title="Link to this definition"></a></dt>
+<dd><p>Check if the user is a regular passenger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if user has user role, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.user.User.first_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#app.models.user.User.first_name" title="Link to this definition"></a></dt>
+<dd><p>Get the user’s first name from their full name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>First name of the user</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.user.User.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User.from_dict" title="Link to this definition"></a></dt>
+<dd><p>Create a User instance from a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing user data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New User instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#app.models.user.User" title="app.models.user.User">User</a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;uuid-123&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;test@test.com&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Test&#39;</span><span class="p">,</span> <span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;USER&#39;</span><span class="p">}</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.user.User.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert User instance to a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary representation of the user</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.user.User.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/user.html#User.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.user.User.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return string representation of the User.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String representation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-app.models.bus">
+<span id="bus-model"></span><h2>Bus Model<a class="headerlink" href="#module-app.models.bus" title="Link to this heading"></a></h2>
+<p>Bus model for the BusFlow application.</p>
+<p>This module defines the Bus class that represents buses in the fleet,
+including their routes, capacity, and operational status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.models.bus</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.models.bus.Bus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.models.bus.</span></span><span class="sig-name descname"><span class="pre">Bus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_seats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driver_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ACTIVE'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a bus in the BusFlow fleet.</p>
+<p>Each bus has a defined route (sequence of stops), seat capacity,
+optional driver assignment, ticket price, and operational status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the bus (UUID)</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Display name of the bus (e.g., “Dhaka Chaka 01”)</p></li>
+<li><p><strong>route</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Ordered list of bus stops defining the route</p></li>
+<li><p><strong>total_seats</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Total number of seats available</p></li>
+<li><p><strong>driver_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>None</em>) – UUID of assigned driver or None</p></li>
+<li><p><strong>price</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Ticket price in BDT</p></li>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Operational status (ACTIVE, MAINTENANCE, DECOMMISSIONED)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bus</span> <span class="o">=</span> <span class="n">Bus</span><span class="p">(</span>
+    <span class="n">bus_id</span><span class="o">=</span><span class="s1">&#39;uuid-456&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Red Express 01&#39;</span><span class="p">,</span>
+    <span class="n">route</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Uttara&#39;</span><span class="p">,</span> <span class="s1">&#39;Banani&#39;</span><span class="p">,</span> <span class="s1">&#39;Farmgate&#39;</span><span class="p">],</span>
+    <span class="n">total_seats</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+    <span class="n">driver_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">price</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;ACTIVE&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_seats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driver_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ACTIVE'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize a new Bus instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the bus</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Display name of the bus</p></li>
+<li><p><strong>route</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – List of stops in order</p></li>
+<li><p><strong>total_seats</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Seat capacity</p></li>
+<li><p><strong>driver_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em> or </em><em>None</em>) – Assigned driver’s ID</p></li>
+<li><p><strong>price</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Ticket price in BDT</p></li>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Bus operational status</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.bus.Bus.isActive">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isActive</span></span><a class="headerlink" href="#app.models.bus.Bus.isActive" title="Link to this definition"></a></dt>
+<dd><p>Check if the bus is currently active for service.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if bus status is ACTIVE</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.bus.Bus.start_stop">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">start_stop</span></span><a class="headerlink" href="#app.models.bus.Bus.start_stop" title="Link to this definition"></a></dt>
+<dd><p>Get the first stop in the route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the starting stop</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.bus.Bus.end_stop">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">end_stop</span></span><a class="headerlink" href="#app.models.bus.Bus.end_stop" title="Link to this definition"></a></dt>
+<dd><p>Get the last stop in the route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Name of the ending stop</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.bus.Bus.route_display">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">route_display</span></span><a class="headerlink" href="#app.models.bus.Bus.route_display" title="Link to this definition"></a></dt>
+<dd><p>Get a formatted string of the full route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Route stops joined with arrows</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.bus.Bus.hasDriver">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hasDriver</span></span><a class="headerlink" href="#app.models.bus.Bus.hasDriver" title="Link to this definition"></a></dt>
+<dd><p>Check if the bus has an assigned driver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if driver is assigned</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.get_stop_count">
+<span class="sig-name descname"><span class="pre">get_stop_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.get_stop_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.get_stop_count" title="Link to this definition"></a></dt>
+<dd><p>Get the number of stops in the route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of stops</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.is_valid_trip">
+<span class="sig-name descname"><span class="pre">is_valid_trip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.is_valid_trip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.is_valid_trip" title="Link to this definition"></a></dt>
+<dd><p>Check if a trip from source to destination is valid on this route.</p>
+<p>A trip is valid if both source and destination exist on the route
+and source comes before destination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the boarding stop</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the destination stop</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the trip is valid</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.from_dict" title="Link to this definition"></a></dt>
+<dd><p>Create a Bus instance from a dictionary.</p>
+<p>Handles conversion from Supabase snake_case to Python attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing bus data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New Bus instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#app.models.bus.Bus" title="app.models.bus.Bus">Bus</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert Bus instance to a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary representation of the bus</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.to_db_dict">
+<span class="sig-name descname"><span class="pre">to_db_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.to_db_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.to_db_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert Bus instance to database format (snake_case).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary formatted for Supabase</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.bus.Bus.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/bus.html#Bus.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.bus.Bus.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return string representation of the Bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String representation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-app.models.booking">
+<span id="booking-model"></span><h2>Booking Model<a class="headerlink" href="#module-app.models.booking" title="Link to this heading"></a></h2>
+<p>Booking model for the BusFlow application.</p>
+<p>This module defines the Booking class that represents ticket bookings
+made by passengers for specific bus journeys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">module<span class="colon">:</span></dt>
+<dd class="field-odd"><p>app.models.booking</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.models.booking.Booking">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.models.booking.</span></span><span class="sig-name descname"><span class="pre">Booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seat_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booking_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CONFIRMED'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a ticket booking in the BusFlow system.</p>
+<p>A booking captures all details about a passenger’s reserved seat
+on a specific bus for a particular journey.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the booking (UUID)</p></li>
+<li><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – ID of the user who made the booking</p></li>
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – ID of the booked bus</p></li>
+<li><p><strong>seat_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Seat label (e.g., “A1”, “B3”)</p></li>
+<li><p><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the boarding stop</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the destination stop</p></li>
+<li><p><strong>booking_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Date of the journey</p></li>
+<li><p><strong>price</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Price paid for the ticket in BDT</p></li>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Booking status (CONFIRMED or CANCELLED)</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Timestamp when booking was created</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">booking</span> <span class="o">=</span> <span class="n">Booking</span><span class="p">(</span>
+    <span class="n">booking_id</span><span class="o">=</span><span class="s1">&#39;uuid-789&#39;</span><span class="p">,</span>
+    <span class="n">user_id</span><span class="o">=</span><span class="s1">&#39;user-123&#39;</span><span class="p">,</span>
+    <span class="n">bus_id</span><span class="o">=</span><span class="s1">&#39;bus-456&#39;</span><span class="p">,</span>
+    <span class="n">seat_number</span><span class="o">=</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Uttara&#39;</span><span class="p">,</span>
+    <span class="n">destination</span><span class="o">=</span><span class="s1">&#39;Motijheel&#39;</span><span class="p">,</span>
+    <span class="n">booking_date</span><span class="o">=</span><span class="s1">&#39;2024-12-15&#39;</span><span class="p">,</span>
+    <span class="n">price</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">status</span><span class="o">=</span><span class="s1">&#39;CONFIRMED&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.booking.Booking.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">booking_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bus_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seat_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">booking_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CONFIRMED'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize a new Booking instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>booking_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Unique identifier for the booking</p></li>
+<li><p><strong>user_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – ID of the booking user</p></li>
+<li><p><strong>bus_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – ID of the booked bus</p></li>
+<li><p><strong>seat_number</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Reserved seat label</p></li>
+<li><p><strong>source</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Boarding stop name</p></li>
+<li><p><strong>destination</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Destination stop name</p></li>
+<li><p><strong>booking_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Journey date</p></li>
+<li><p><strong>price</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Ticket price</p></li>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Booking status</p></li>
+<li><p><strong>created_at</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Creation timestamp</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.booking.Booking.isConfirmed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isConfirmed</span></span><a class="headerlink" href="#app.models.booking.Booking.isConfirmed" title="Link to this definition"></a></dt>
+<dd><p>Check if the booking is confirmed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if booking status is CONFIRMED</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.booking.Booking.isCancelled">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isCancelled</span></span><a class="headerlink" href="#app.models.booking.Booking.isCancelled" title="Link to this definition"></a></dt>
+<dd><p>Check if the booking has been cancelled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if booking status is CANCELLED</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.booking.Booking.route_display">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">route_display</span></span><a class="headerlink" href="#app.models.booking.Booking.route_display" title="Link to this definition"></a></dt>
+<dd><p>Get a formatted string of the journey route.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Source and destination joined with arrow</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.booking.Booking.formatted_date">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">formatted_date</span></span><a class="headerlink" href="#app.models.booking.Booking.formatted_date" title="Link to this definition"></a></dt>
+<dd><p>Get a formatted date string for display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted date string</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="app.models.booking.Booking.formatted_time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">formatted_time</span></span><a class="headerlink" href="#app.models.booking.Booking.formatted_time" title="Link to this definition"></a></dt>
+<dd><p>Get a formatted time string for display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted time string</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.booking.Booking.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking.from_dict" title="Link to this definition"></a></dt>
+<dd><p>Create a Booking instance from a dictionary.</p>
+<p>Handles conversion from Supabase snake_case to Python attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – Dictionary containing booking data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New Booking instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#app.models.booking.Booking" title="app.models.booking.Booking">Booking</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.booking.Booking.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert Booking instance to a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary representation of the booking</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.booking.Booking.to_db_dict">
+<span class="sig-name descname"><span class="pre">to_db_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking.to_db_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking.to_db_dict" title="Link to this definition"></a></dt>
+<dd><p>Convert Booking instance to database format for insertion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dictionary formatted for Supabase insert</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.models.booking.Booking.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/app/models/booking.html#Booking.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.models.booking.Booking.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Return string representation of the Booking.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String representation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Modules Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, CSE327 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

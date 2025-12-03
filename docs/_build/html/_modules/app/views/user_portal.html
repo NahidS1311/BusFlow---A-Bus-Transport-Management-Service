@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app.views.user_portal &mdash; BusFlow Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            BusFlow
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Modules Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules.html#module-app">Application Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../modules.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modules.html#module-app.config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.user">User Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.user.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.__init__"><code class="docutils literal notranslate"><span class="pre">User.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.get_id"><code class="docutils literal notranslate"><span class="pre">User.get_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isAdmin"><code class="docutils literal notranslate"><span class="pre">User.isAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isDriver"><code class="docutils literal notranslate"><span class="pre">User.isDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.isUser"><code class="docutils literal notranslate"><span class="pre">User.isUser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.first_name"><code class="docutils literal notranslate"><span class="pre">User.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.from_dict"><code class="docutils literal notranslate"><span class="pre">User.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.to_dict"><code class="docutils literal notranslate"><span class="pre">User.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.user.User.__repr__"><code class="docutils literal notranslate"><span class="pre">User.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.bus">Bus Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.bus.Bus"><code class="docutils literal notranslate"><span class="pre">Bus</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.__init__"><code class="docutils literal notranslate"><span class="pre">Bus.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.isActive"><code class="docutils literal notranslate"><span class="pre">Bus.isActive</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.start_stop"><code class="docutils literal notranslate"><span class="pre">Bus.start_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.end_stop"><code class="docutils literal notranslate"><span class="pre">Bus.end_stop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.route_display"><code class="docutils literal notranslate"><span class="pre">Bus.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.hasDriver"><code class="docutils literal notranslate"><span class="pre">Bus.hasDriver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.get_stop_count"><code class="docutils literal notranslate"><span class="pre">Bus.get_stop_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.is_valid_trip"><code class="docutils literal notranslate"><span class="pre">Bus.is_valid_trip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.from_dict"><code class="docutils literal notranslate"><span class="pre">Bus.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.to_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Bus.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.bus.Bus.__repr__"><code class="docutils literal notranslate"><span class="pre">Bus.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#module-app.models.booking">Booking Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../models.html#app.models.booking.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.__init__"><code class="docutils literal notranslate"><span class="pre">Booking.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.isConfirmed"><code class="docutils literal notranslate"><span class="pre">Booking.isConfirmed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.isCancelled"><code class="docutils literal notranslate"><span class="pre">Booking.isCancelled</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.route_display"><code class="docutils literal notranslate"><span class="pre">Booking.route_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.formatted_date"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.formatted_time"><code class="docutils literal notranslate"><span class="pre">Booking.formatted_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.from_dict"><code class="docutils literal notranslate"><span class="pre">Booking.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.to_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.to_db_dict"><code class="docutils literal notranslate"><span class="pre">Booking.to_db_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../models.html#app.models.booking.Booking.__repr__"><code class="docutils literal notranslate"><span class="pre">Booking.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.auth_controller">Authentication Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController"><code class="docutils literal notranslate"><span class="pre">AuthController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.__init__"><code class="docutils literal notranslate"><span class="pre">AuthController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.login"><code class="docutils literal notranslate"><span class="pre">AuthController.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.register"><code class="docutils literal notranslate"><span class="pre">AuthController.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.logout"><code class="docutils literal notranslate"><span class="pre">AuthController.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.auth_controller.AuthController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">AuthController.get_user_by_id()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.bus_controller">Bus Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController"><code class="docutils literal notranslate"><span class="pre">BusController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.__init__"><code class="docutils literal notranslate"><span class="pre">BusController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_all_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_buses_for_driver"><code class="docutils literal notranslate"><span class="pre">BusController.get_buses_for_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_active_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_active_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.search_buses"><code class="docutils literal notranslate"><span class="pre">BusController.search_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.create_bus"><code class="docutils literal notranslate"><span class="pre">BusController.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.update_bus"><code class="docutils literal notranslate"><span class="pre">BusController.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.assign_driver"><code class="docutils literal notranslate"><span class="pre">BusController.assign_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">BusController.get_unassigned_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.bus_controller.BusController.get_bus_with_driver_info"><code class="docutils literal notranslate"><span class="pre">BusController.get_bus_with_driver_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.booking_controller">Booking Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController"><code class="docutils literal notranslate"><span class="pre">BookingController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.__init__"><code class="docutils literal notranslate"><span class="pre">BookingController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_user_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_user_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_confirmed_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.get_confirmed_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_occupied_seats"><code class="docutils literal notranslate"><span class="pre">BookingController.get_occupied_seats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_seat_layout"><code class="docutils literal notranslate"><span class="pre">BookingController.get_seat_layout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.create_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.create_multiple_bookings"><code class="docutils literal notranslate"><span class="pre">BookingController.create_multiple_bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.cancel_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.delete_booking"><code class="docutils literal notranslate"><span class="pre">BookingController.delete_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.booking_controller.BookingController.get_booking_with_bus"><code class="docutils literal notranslate"><span class="pre">BookingController.get_booking_with_bus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../controllers.html#module-app.controllers.user_controller">User Controller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController"><code class="docutils literal notranslate"><span class="pre">UserController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.__init__"><code class="docutils literal notranslate"><span class="pre">UserController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_users"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_drivers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_all_passengers"><code class="docutils literal notranslate"><span class="pre">UserController.get_all_passengers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.create_driver"><code class="docutils literal notranslate"><span class="pre">UserController.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">UserController.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../controllers.html#app.controllers.user_controller.UserController.get_user_statistics"><code class="docutils literal notranslate"><span class="pre">UserController.get_user_statistics()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../views.html">Views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.landing">Landing View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.landing.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.auth">Authentication View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.auth.logout"><code class="docutils literal notranslate"><span class="pre">logout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.user_portal">User Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.search_buses"><code class="docutils literal notranslate"><span class="pre">search_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_seats"><code class="docutils literal notranslate"><span class="pre">get_seats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_bookings"><code class="docutils literal notranslate"><span class="pre">get_bookings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.get_booking_detail"><code class="docutils literal notranslate"><span class="pre">get_booking_detail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.user_portal.cancel_booking"><code class="docutils literal notranslate"><span class="pre">cancel_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.driver_portal">Driver Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.get_assigned_buses"><code class="docutils literal notranslate"><span class="pre">get_assigned_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.driver_portal.get_bus_detail"><code class="docutils literal notranslate"><span class="pre">get_bus_detail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../views.html#module-app.views.admin_portal">Admin Portal View</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.dashboard"><code class="docutils literal notranslate"><span class="pre">dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_all_buses"><code class="docutils literal notranslate"><span class="pre">get_all_buses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.create_bus"><code class="docutils literal notranslate"><span class="pre">create_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.update_bus"><code class="docutils literal notranslate"><span class="pre">update_bus()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.assign_driver"><code class="docutils literal notranslate"><span class="pre">assign_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_all_drivers"><code class="docutils literal notranslate"><span class="pre">get_all_drivers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.create_driver"><code class="docutils literal notranslate"><span class="pre">create_driver()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../views.html#app.views.admin_portal.get_unassigned_buses"><code class="docutils literal notranslate"><span class="pre">get_unassigned_buses()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services.html">Services</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../services.html#module-app.services.supabase_service">Supabase Service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService"><code class="docutils literal notranslate"><span class="pre">SupabaseService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.__init__"><code class="docutils literal notranslate"><span class="pre">SupabaseService.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.login"><code class="docutils literal notranslate"><span class="pre">SupabaseService.login()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.register"><code class="docutils literal notranslate"><span class="pre">SupabaseService.register()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.logout"><code class="docutils literal notranslate"><span class="pre">SupabaseService.logout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_user_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_all_users"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_users()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_users_by_role"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_users_by_role()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_all_buses"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_all_buses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bus_by_id"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_by_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_buses_by_driver"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_buses_by_driver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.update_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.update_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.delete_bus"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_bus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bookings_by_user"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bookings_by_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.get_bus_bookings_for_date"><code class="docutils literal notranslate"><span class="pre">SupabaseService.get_bus_bookings_for_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.create_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.cancel_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.cancel_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services.html#app.services.supabase_service.SupabaseService.delete_booking"><code class="docutils literal notranslate"><span class="pre">SupabaseService.delete_booking()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.AuthenticationError"><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.RegistrationError"><code class="docutils literal notranslate"><span class="pre">RegistrationError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.BookingError"><code class="docutils literal notranslate"><span class="pre">BookingError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services.html#app.services.supabase_service.DatabaseOperationError"><code class="docutils literal notranslate"><span class="pre">DatabaseOperationError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services.html#custom-exceptions">Custom Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">BusFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../../app.html">app</a></li>
+      <li class="breadcrumb-item active">app.views.user_portal</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for app.views.user_portal</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">User portal views for the BusFlow application.</span>
+
+<span class="sd">This module defines the routes for the passenger portal including</span>
+<span class="sd">bus search, seat selection, booking management, and ticket cancellation.</span>
+
+<span class="sd">:module: app.views.user_portal</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span><span class="p">,</span> <span class="n">current_user</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.controllers.bus_controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">BusController</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.controllers.booking_controller</span><span class="w"> </span><span class="kn">import</span> <span class="n">BookingController</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ALL_BUS_STOPS</span>
+
+<span class="n">user_portal_bp</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">&#39;user_portal&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_user_role</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Verify the current user has USER role.</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: Redirect if unauthorized, None if authorized</span>
+<span class="sd">    :rtype: Response or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">current_user</span><span class="o">.</span><span class="n">isUser</span><span class="p">:</span>
+        <span class="n">flash</span><span class="p">(</span><span class="s1">&#39;Access denied. This portal is for passengers only.&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;landing.index&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="dashboard">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.dashboard">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dashboard</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Render the user dashboard with search and booking tabs.</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: Rendered dashboard template</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">redirect_response</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">bookings</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">get_user_bookings</span><span class="p">(</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span>
+        <span class="s1">&#39;user/dashboard.html&#39;</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="n">current_user</span><span class="p">,</span>
+        <span class="n">bookings</span><span class="o">=</span><span class="n">bookings</span><span class="p">,</span>
+        <span class="n">bus_stops</span><span class="o">=</span><span class="n">ALL_BUS_STOPS</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="search_buses">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.search_buses">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/search&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">search_buses</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search for buses matching the route criteria.</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: JSON response with matching buses</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">source</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">destination</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;destination&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">source</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">destination</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Please select both source and destination.&#39;</span><span class="p">}),</span> <span class="mi">400</span>
+    
+    <span class="k">if</span> <span class="n">source</span> <span class="o">==</span> <span class="n">destination</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Source and destination cannot be the same.&#39;</span><span class="p">}),</span> <span class="mi">400</span>
+    
+    <span class="n">bus_controller</span> <span class="o">=</span> <span class="n">BusController</span><span class="p">()</span>
+    <span class="n">buses</span> <span class="o">=</span> <span class="n">bus_controller</span><span class="o">.</span><span class="n">search_buses</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+    
+    <span class="n">bus_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">buses</span><span class="p">:</span>
+        <span class="n">bus_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;route&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">route</span><span class="p">,</span>
+            <span class="s1">&#39;route_display&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">route_display</span><span class="p">,</span>
+            <span class="s1">&#39;start_stop&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">start_stop</span><span class="p">,</span>
+            <span class="s1">&#39;end_stop&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">end_stop</span><span class="p">,</span>
+            <span class="s1">&#39;total_seats&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">total_seats</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">status</span>
+        <span class="p">})</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+        <span class="s1">&#39;buses&#39;</span><span class="p">:</span> <span class="n">bus_list</span><span class="p">,</span>
+        <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">bus_list</span><span class="p">),</span>
+        <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">source</span><span class="p">,</span>
+        <span class="s1">&#39;destination&#39;</span><span class="p">:</span> <span class="n">destination</span>
+    <span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="get_seats">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.get_seats">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/seats/&lt;bus_id&gt;&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_seats</span><span class="p">(</span><span class="n">bus_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get seat availability for a specific bus.</span>
+<span class="sd">    </span>
+<span class="sd">    :param bus_id: UUID of the bus</span>
+<span class="sd">    :type bus_id: str</span>
+<span class="sd">    :returns: JSON response with seat layout</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">bus_controller</span> <span class="o">=</span> <span class="n">BusController</span><span class="p">()</span>
+    
+    <span class="n">bus</span> <span class="o">=</span> <span class="n">bus_controller</span><span class="o">.</span><span class="n">get_bus_by_id</span><span class="p">(</span><span class="n">bus_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">bus</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Bus not found.&#39;</span><span class="p">}),</span> <span class="mi">404</span>
+    
+    <span class="n">seat_layout</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">get_seat_layout</span><span class="p">(</span><span class="n">bus_id</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+        <span class="s1">&#39;bus&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">price</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;seats&#39;</span><span class="p">:</span> <span class="n">seat_layout</span>
+    <span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="create_booking">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.create_booking">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/book&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_booking</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a new booking for selected seats.</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: JSON response with booking result</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+    <span class="n">bus_id</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;bus_id&#39;</span><span class="p">)</span>
+    <span class="n">seat_numbers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;seats&#39;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">)</span>
+    <span class="n">destination</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;destination&#39;</span><span class="p">)</span>
+    <span class="n">price_per_seat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">bus_id</span><span class="p">,</span> <span class="n">seat_numbers</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">price_per_seat</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Missing required booking information.&#39;</span><span class="p">}),</span> <span class="mi">400</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">successful_bookings</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">create_multiple_bookings</span><span class="p">(</span>
+        <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="n">bus_id</span><span class="o">=</span><span class="n">bus_id</span><span class="p">,</span>
+        <span class="n">seat_numbers</span><span class="o">=</span><span class="n">seat_numbers</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">destination</span><span class="o">=</span><span class="n">destination</span><span class="p">,</span>
+        <span class="n">price_per_seat</span><span class="o">=</span><span class="n">price_per_seat</span>
+    <span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">errors</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">successful_bookings</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]}),</span> <span class="mi">400</span>
+    
+    <span class="n">response_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Successfully booked </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">successful_bookings</span><span class="p">)</span><span class="si">}</span><span class="s1"> seat(s).&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;bookings&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">successful_bookings</span><span class="p">],</span>
+        <span class="s1">&#39;total_price&#39;</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">price</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">successful_bookings</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+        <span class="n">response_data</span><span class="p">[</span><span class="s1">&#39;partial_errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">errors</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response_data</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="get_bookings">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.get_bookings">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/bookings&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_bookings</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get all bookings for the current user.</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: JSON response with user&#39;s bookings</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">bus_controller</span> <span class="o">=</span> <span class="n">BusController</span><span class="p">()</span>
+    
+    <span class="n">bookings</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">get_user_bookings</span><span class="p">(</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">buses</span> <span class="o">=</span> <span class="p">{</span><span class="n">b</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bus_controller</span><span class="o">.</span><span class="n">get_all_buses</span><span class="p">()}</span>
+    
+    <span class="n">booking_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">booking</span> <span class="ow">in</span> <span class="n">bookings</span><span class="p">:</span>
+        <span class="n">bus</span> <span class="o">=</span> <span class="n">buses</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">booking</span><span class="o">.</span><span class="n">bus_id</span><span class="p">)</span>
+        <span class="n">booking_data</span> <span class="o">=</span> <span class="n">booking</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="n">booking_data</span><span class="p">[</span><span class="s1">&#39;bus_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bus</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">bus</span> <span class="k">else</span> <span class="s1">&#39;Unknown Bus&#39;</span>
+        <span class="n">booking_data</span><span class="p">[</span><span class="s1">&#39;formatted_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">booking</span><span class="o">.</span><span class="n">formatted_date</span>
+        <span class="n">booking_data</span><span class="p">[</span><span class="s1">&#39;formatted_time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">booking</span><span class="o">.</span><span class="n">formatted_time</span>
+        <span class="n">booking_data</span><span class="p">[</span><span class="s1">&#39;route_display&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">booking</span><span class="o">.</span><span class="n">route_display</span>
+        <span class="n">booking_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">booking_data</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;bookings&#39;</span><span class="p">:</span> <span class="n">booking_list</span><span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="get_booking_detail">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.get_booking_detail">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/booking/&lt;booking_id&gt;&#39;</span><span class="p">)</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_booking_detail</span><span class="p">(</span><span class="n">booking_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get details of a specific booking.</span>
+<span class="sd">    </span>
+<span class="sd">    :param booking_id: UUID of the booking</span>
+<span class="sd">    :type booking_id: str</span>
+<span class="sd">    :returns: JSON response with booking details</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">bus_controller</span> <span class="o">=</span> <span class="n">BusController</span><span class="p">()</span>
+    
+    <span class="n">bookings</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">get_user_bookings</span><span class="p">(</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">booking</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bookings</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">booking_id</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">booking</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Booking not found.&#39;</span><span class="p">}),</span> <span class="mi">404</span>
+    
+    <span class="n">bus</span> <span class="o">=</span> <span class="n">bus_controller</span><span class="o">.</span><span class="n">get_bus_by_id</span><span class="p">(</span><span class="n">booking</span><span class="o">.</span><span class="n">bus_id</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+        <span class="s1">&#39;booking&#39;</span><span class="p">:</span> <span class="n">booking</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+        <span class="s1">&#39;bus_name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">bus</span> <span class="k">else</span> <span class="s1">&#39;Unknown Bus&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;formatted_date&#39;</span><span class="p">:</span> <span class="n">booking</span><span class="o">.</span><span class="n">formatted_date</span><span class="p">,</span>
+        <span class="s1">&#39;formatted_time&#39;</span><span class="p">:</span> <span class="n">booking</span><span class="o">.</span><span class="n">formatted_time</span><span class="p">,</span>
+        <span class="s1">&#39;route_display&#39;</span><span class="p">:</span> <span class="n">booking</span><span class="o">.</span><span class="n">route_display</span>
+    <span class="p">})</span></div>
+
+
+
+<div class="viewcode-block" id="cancel_booking">
+<a class="viewcode-back" href="../../../views.html#app.views.user_portal.cancel_booking">[docs]</a>
+<span class="nd">@user_portal_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/cancel/&lt;booking_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@login_required</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cancel_booking</span><span class="p">(</span><span class="n">booking_id</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cancel a specific booking.</span>
+<span class="sd">    </span>
+<span class="sd">    :param booking_id: UUID of the booking to cancel</span>
+<span class="sd">    :type booking_id: str</span>
+<span class="sd">    :returns: JSON response with cancellation result</span>
+<span class="sd">    :rtype: Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">redirect_response</span> <span class="o">=</span> <span class="n">_check_user_role</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">redirect_response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unauthorized&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+    
+    <span class="n">booking_controller</span> <span class="o">=</span> <span class="n">BookingController</span><span class="p">()</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">booking_controller</span><span class="o">.</span><span class="n">delete_booking</span><span class="p">(</span><span class="n">booking_id</span><span class="p">,</span> <span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Ticket cancelled successfully.&#39;</span>
+        <span class="p">})</span>
+    
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="n">error</span> <span class="ow">or</span> <span class="s1">&#39;Failed to cancel booking.&#39;</span><span class="p">}),</span> <span class="mi">400</span></div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, CSE327 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
